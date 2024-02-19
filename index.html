@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore | Search</title>
+
+    <!-- 
+        <<<<<<<<<
+
+        by LEEOR BURTON - Feb 2024
+        https://leeorburton.com
+
+        >>>>>>>>>
+    -->
+    
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/result.css"> -->
+    
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul class="top-nav">
+
+                <li class="logo-container">
+                    <img src="img/white_logo.png">
+                </li>
+
+                <li>
+                    <ul>
+                        <li class="services">
+                            <div>Trade</div>
+                            <div>Eat</div>
+                            <div>About</div>
+                            <div class="nav-icon"> 
+                                <img src="img/profile-circle.png">
+                            </div>
+                        </li>
+                        <li class="mobile">
+                            <div>
+                                <img src="img/icons8-hamburger.svg">
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="bottom-nav">
+                <li>
+                    <ul>
+                        <li class="cat">
+                            <div>New</div>
+                            <div>Fiction</div>
+                            <div>Non-fiction</div>
+                            <div>Kids</div>
+                            <div>Bestsellers</div>
+                        </li>
+                        <li class="mobile">
+                            <div>Shop</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="nav-icon">
+                        <img src="img/shopping-bag.png">
+                    </div>
+                    <div class="nav-icon">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="vuesax/linear/search-normal">
+                            <g id="search-normal">
+                            <path id="Vector" d="M17.2709 31.1248C24.9223 31.1248 31.125 24.9221 31.125 17.2707C31.125 9.61923 24.9223 3.4165 17.2709 3.4165C9.61941 3.4165 3.41669 9.61923 3.41669 17.2707C3.41669 24.9221 9.61941 31.1248 17.2709 31.1248Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path id="Vector_2" d="M32.5834 32.5832L29.6667 29.6665" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </g>
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="spinner"></div>
+        <div class="container-bg">
+            <div class="grid container">
+                <div class="close-icon">
+                    <img src="img/add.png">
+                </div>
+                <div class="col-3-sm"><!-- spacer for search container --></div>
+
+                <div class="col-12 col-6-sm search-container">
+                    <div class="search-icon-container">
+                        <img class="search-icon" src="img/search-normal.svg">
+                    </div>
+                    <input autocomplete="false" type="text" id="search" name="search" placeholder="SEARCH">
+                    <button class="btn search-btn" id="enter">Go</button>
+                </div>
+
+                <div class="col-0 col-3-sm"><!-- spacer for search container--></div>
+
+                <div class="col-0 col-2-sm"><!-- spacer for filter/heading container--></div>
+
+                <div class="col-6 col-4-sm heading">
+                    <h1>Products</h1>
+                </div>
+
+                <div class="col-6 col-4-sm sort-filter">
+                    <div>
+                        <label for="search-type">Search by:</label>
+                        <select id="search-type" name="search-type">
+                            <option>All</option>
+                            <option>Author</option>
+                            <option>Title</option>
+                            <option>Genre</option>
+                            <option>ISBN</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sort-by">Sort by:</label>
+                        <select id="sort-by" name="sort-by">
+                            <option>Relevance</option>
+                            <option>Newest</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-0 col-2-sm"><!-- spacer for filter/heading container--></div>
+
+
+                <div class="col-0 col-2-sm"><!-- spacer for results--></div>
+                
+                <div class="col-12 col-8-sm results">
+                </div>
+
+                <div class="col-0 col-2-sm"></div>
+
+                <div class="col-12 loadmore-container">
+                    <button class="btn loadless">Back</button>
+                    <button class="btn loadmore">Next</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js">
+
+    </script>
+</body>
+</html>
