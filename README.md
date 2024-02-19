@@ -32,3 +32,4 @@ Next, we can formulate the query using parameters defined in the API's documenta
 
 
 For a full project breakdown [visit my portfolio](https://leeorburton.com/search.html)
+To view the API Documentation [view the Google Books guide](https://developers.google.com/books/docs/v1/using#query-params)
