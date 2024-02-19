@@ -1,6 +1,6 @@
 # Bookstore Search
 Simulate a bookstore website search page using HTML, CSS, JavaScript, and Google's Book API.
-[view live demo](https://bookstore.leeorburton.com)
+<br/> [view live demo](https://bookstore.leeorburton.com)
 
 ## Introduction
 My first time using an API! This was originally part of a class project where we were initially introduced to utilizing public APIs using JavaScript. For my assignment, I chose to build out part of an existing project of mine where I redesigned the UI of a local bookstore's website. Since this was my first introduction to APIs there was a little bit of trial and error involved. Specifically, I feel like was my first time really having to read and understand documentation on my own. It took a little bit of time to get the hang of whats going on, but its obviously become a very important skill as I've progressed in my career. 
