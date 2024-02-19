@@ -31,5 +31,5 @@ Next, we can formulate the query using parameters defined in the API's documenta
 - **orderBy**: determines the order of the search results based on the user's input stored in the 'sortSet' variable.
 
 
-For a full project breakdown [visit my portfolio](https://leeorburton.com/search.html)
-<br/>To view the API Documentation [view the Google Books guide](https://developers.google.com/books/docs/v1/using#query-params)
+For a full project breakdown [visit my portfolio](https://leeorburton.com/search.html)<br/>
+To view the API Documentation [view the Google Books guide](https://developers.google.com/books/docs/v1/using#query-params)
