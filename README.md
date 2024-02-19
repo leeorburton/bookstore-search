@@ -10,11 +10,13 @@ This was also my first time really working with asynchronous JavaScript, but aft
 ## Endpoint
 The query is defined in the loadList function based on a few different dependencies.
 
- if (searchType == 'none') {
+```js
+if (searchType == 'none') {
         searchQ = 'https://www.googleapis.com/books/v1/volumes?printType=books&langRestrict=en&maxResults=' + perPage + '&q=' + userInput + '&startIndex=' + (lastPage * perPage) + '&orderBy=' + sortSet;
     } else {
         searchQ = 'https://www.googleapis.com/books/v1/volumes?printType=books&langRestrict=en&maxResults=' + perPage + '&q=' + searchType + ':' + userInput + '&startIndex=' + (lastPage * perPage) + '&orderBy=' + sortSet;
     }
+```
 
 First, the if statement determines whether the request is coming from the user, or the first load. This is so that we can ensure the 'next' button will only appear once the user has executed a search.
 
