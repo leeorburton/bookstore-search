@@ -1,8 +1,12 @@
 let searchInput = document.querySelector('#search');
-let searchBtn = document.querySelector('.search-btn');
+let searchBtn = document.querySelector('.searchBtn');
 let loadmore = document.querySelector('.loadmore-container');
 let loadMoreBtn = document.querySelector('.loadmore');
 let loadLessBtn = document.querySelector('.loadless');
+
+let sortResults = document.querySelector('#sortBy');
+let filterResults = document.querySelector('#searchType');
+
 let lastPage;
 let searchQ;
 let validInput;
@@ -13,8 +17,12 @@ let perPage = 5;
 // on first load, run query to display default results without load more buttons
 window.onload = firstLoad();
 
-// on click or enter, load list
+// on button click, sort, filter, or enter, load list
 searchBtn.addEventListener("click", loadList);
+
+sortResults.addEventListener("change", loadList);
+filterResults.addEventListener("change", loadList);
+
 searchInput.addEventListener("keypress", function (e) {
     // If the user presses the "Enter" key on the keyboard
     if (e.key === "Enter") {
@@ -48,12 +56,15 @@ function firstLoad() {
     fetchResults(searchQ, "default");
 }
 
+
+
 function loadList() {
     // excute search with (sanitized) user search terms/sorts/filters
-    let userInput = encodeURIComponent(searchInput.value);
+    let userInput = searchInput.value;
+    userInput = encodeURIComponent(userInput);
 
-    let sortSet = document.querySelector('#sort-by').value.toLowerCase();
-    let searchType = document.querySelector('#search-type').value.toLowerCase();
+    let sortSet = document.querySelector('#sortBy').value.toLowerCase();
+    let searchType = document.querySelector('#searchType').value.toLowerCase();
 
 
     // depending on searchType user selected, change variable value to API's accepted query parameter
@@ -109,14 +120,17 @@ function fetchResults(searchQ, source) {
         )
         .then((data) => {
             processData(data, source);
-        })
+        }
+        )
         .catch((error) => {
-            console.log("error:" + error);
+            let container = document.querySelector('.results');
+            container.innerText = "Sorry, something went wrong on our end.";
         })
         .finally(() => {
             // once complete, hide preloader
             document.querySelector('#spinner').classList.remove('preloader')
-        });
+        }
+        )
 }
 
 function processData(result, source) {
@@ -153,18 +167,17 @@ function processData(result, source) {
 
 }
 
-// add fetched results to the UI
 function addToContainer(result) {
 
     let container = document.querySelector('.results');
 
     for (let i = 0; i < result.items.length; i++) {
 
-        // result container
+        //result container
         let resultBox = document.createElement('div');
         resultBox.classList.add('result');
 
-        // cover container
+        //cover container
         let coverContainer = document.createElement('div');
         coverContainer.classList.add('cover');
 
@@ -176,7 +189,7 @@ function addToContainer(result) {
         }
         coverContainer.appendChild(coverImg);
 
-        // content container
+        //content container
         let content = document.createElement('div');
         content.classList.add('content');
 
@@ -204,10 +217,11 @@ function addToContainer(result) {
         desc.classList.add('desc');
         content.appendChild(desc);
 
-        //add all
         resultBox.appendChild(coverContainer);
         resultBox.appendChild(content);
+
         container.appendChild(resultBox);
+
     }
 
 }
